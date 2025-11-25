@@ -1,0 +1,12 @@
+FROM alpine:latest
+
+WORKDIR /usr/local/app
+COPY . .
+
+# Install go
+RUN apk add go
+RUN go build -o compute-max-server
+
+EXPOSE 8080
+
+ENTRYPOINT [ "./compute-max-server" ]

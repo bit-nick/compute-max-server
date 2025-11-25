@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cm-server-pod
+  namespace: default
+spec:
+  containers:
+    - name: cm-server
+      image: compute-max-server:latest
+      imagePullPolicy: Never
+      ports:
+        - containerPort: 8080

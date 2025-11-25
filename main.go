@@ -26,9 +26,8 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	result := math.Max(request.X, request.Y)
-	response := ResponseStruct{Result: result}
 
-	json.NewEncoder(w).Encode(response)
+	json.NewEncoder(w).Encode(ResponseStruct{Result: result})
 }
 
 func main() {

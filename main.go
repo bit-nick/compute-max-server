@@ -8,6 +8,7 @@ import (
 	"net/http"
 )
 
+// { x: 10, y: 20 }
 type RequestStruct struct {
 	X float64 `json:"x"`
 	Y float64 `json:"y"`
@@ -27,7 +28,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 	result := math.Max(request.X, request.Y)
 
-	json.NewEncoder(w).Encode(ResponseStruct{Result: result})
+	json.NewEncoder(w).Encode(ResponseStruct{Result: result + 1})
 }
 
 func main() {
